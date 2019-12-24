@@ -11,8 +11,8 @@ api = Api(app)
 
 
 
-starships_sorted = 0
-starships_unknown_hyperdrive = 0
+starships_sorted = []
+starships_unknown_hyperdrive = []
 
 def retriever():
     global starships_sorted
@@ -52,8 +52,7 @@ class StartshipsRestful(Resource):
 api.add_resource(StartshipsRestful, '/')
 
 if __name__ == '__main__':
-    t1 = threading.Thread(name="retriever", target=retriever) 
-    t1.start()
+    threading.Thread(name="retriever", target=retriever).start()
     app.run(debug=True, port=8082)
 
     

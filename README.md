@@ -1,14 +1,16 @@
 # Flask-RestAPI-Starship
-<h1>Deploying Method1</h1>
-<h3>*Note: I made a simple bash script that simply setups this app and will run that and you can skip from the deploying method2:</h3>
+<h1>Deployment Method1</h1>
+<h3>*Note: I made a simple bash script which simply setting up this app and will run that so you can skip from deploying method2:</h3>
     <p>*** It tested only in ubuntu 18.04 ***</p>
  <pre>
+ git clone https://github.com/H4mid2019/Flask-RestAPI-Starship.git
+ cd Flask-RestAPI-Starship/
  chmod +x starships.sh
  sudo ./starships.sh
  </pre>
  <br/>
-<h1>Deploying Method2</h2>
-<p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). so I install flowing programs. nginx, pip, python3,6>= , flask, flask-restful, requests by following commands in terminal:</p>
+<h1>Deployment Method2</h2>
+<p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). So I installed the following programs. nginx, pip, python3,6>= , flask, flask-restful, requests by the following commands in the terminal:</p>
 <p>*Note: I logged in as a root user.</p>
 <pre>
 apt update && apt upgrade -y && apt install -y python3-dev build-essential python3-pip  nginx
@@ -17,15 +19,15 @@ apt update && apt upgrade -y && apt install -y python3-dev build-essential pytho
 <pre>
 pip3 install -U setuptools requests wheel
 </pre>
-<p>installing flask and flask-restful(for RESTful-API) gunicorn(for web-server)</p>
+<p>installing flask, flask-restful(for RESTful-API), and gunicorn(for web-server)</p>
 <pre>
 pip3 install flask flask-restful Gunicorn
 </pre>
 
-<p>I make a folder under “/var/www/html” with “starships” name. and I put the codes there.
-so there are 3 methods of REST-API with flask. I coded in 3 different methods. first exist in "app" and second is in "app2" and third in "app3".</p>
+<p>I'v made a folder under “/var/www/html” named “starships” and put the codes there.
+There are 2 methods of REST-API with flask. I coded in 3 different ways using them.You can find the first in "app" the second in "app2" and the third in "app3".</p>
 
-<p>The major difference between app3 and the two other is the app3 is much faster in answering to the client because it keeps itself updated from API every 15 seconds but the other base on user request, receive data from the server at runtime and then will be delivered to the client.</p>
+<p>The major difference between app3 and two others is that the app3 is much faster in answering the client. Because it keeps itself updated from API every 15 seconds, but the others receive data from the server at runtime after user requests and then will deliver to the client.</p>
 
 I love the "app3" so I configure Nginx and Gunicorn (wsgi3) for app3 by the way the first app is perfectly fine.
 
