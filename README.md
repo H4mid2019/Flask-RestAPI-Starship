@@ -98,7 +98,7 @@ so I will restart the nginx service
 <pre>
 systemctl restart nginx
 </pre>
-also, I must open port 80 in firewall
+also, I should open port 80 in firewall
 <pre>
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 </pre>
