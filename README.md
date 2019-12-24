@@ -1,10 +1,13 @@
 # Flask-RestAPI-Starship
-<h3>*Note: I made a simple bash script that simply setups this app and will run that just use this command:</h3>
+<h1>Method1</h1>
+<h3>*Note: I made a simple bash script that simply setups this app and will run that and you can skip from the method2:</h3>
     <p>*** It tested only in ubuntu 18.04 ***</p>
  <pre>
  chmod +x starships.sh
  sudo ./starships.sh
  </pre>
+ <br/>
+<h1>Method2</h2>
 <p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). so I install flowing programs. nginx, pip, python3,6>= , flask, flask-restful, requests by following commands in terminal:
 *Note: I logged in as a root user.</p>
 <pre>
