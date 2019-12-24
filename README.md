@@ -35,9 +35,7 @@ There are 2 methods of REST-API with flask. I coded in 3 different ways using th
 <pre>
 gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi3:app
 </pre>
-where "w" stands for workers so we get higher speed(based on Gunicorn documentation for each core of processor 4 workers is fine)
-I wanna Gunicorn to be bind as a Unix socket so I think it's faster and at least one of the port of servers will be still empty.
-so I added a file which its name is "starships.service" to "/etc/systemd/system" and configured that like below to introduce our Gunicorn as service achieving a stable running Gunicorn service even after restarting the server. and I configured that to run after network configured
+<p>Here "w" stands for workers.  As much we have more workers we achieve higher speed (Based on Gunicorn documentation, for each core of processor 4 workers is fine). I bound Gunicorn to a Unix socket to make it faster, Plus, at least one of the server ports remain empty. In the next step, I added a file named "starships.service" to this address: "/etc/systemd/system" and configured the file as it is written below to introduce our Gunicorn as a service, achieving a stable running Gunicorn service even after restarting the server. In the end, I configured that to run after the network configuration.</p>
 <pre>
 [Unit]
 Description=Starships Gunicorn daemon
@@ -57,7 +55,7 @@ PrivateTmp=true
 WantedBy=multi-user.target
 </pre>
 
-So now I check the service correctly works and then I will enable that for to be sure It will be run in next system restart
+<p>In this step, I check if the service works correctly, and then I will enable that to be sure It will run in the next system restart</p>
 <pre>
 systemctl start starships   # for starting the service 
 systemctl status starships  # for checking the service which is correct
