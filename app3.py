@@ -14,7 +14,7 @@ api = Api(app)
 starships_sorted = 0
 starships_unknown_hyperdrive = 0
 
-def ret():
+def retriever():
     global starships_sorted
     global starships_unknown_hyperdrive
     l = []
@@ -39,7 +39,7 @@ def ret():
             else:
                 starships_unknown_hyperdrive.append(dict({'name':ii['name']}))
     starships_sorted = sorted(starships, key = lambda i: i['hyperdrive_rating'], reverse=False)
-    threading.Timer(15, ret).start()
+    threading.Timer(15, retriever).start()
     return True 
 
 
@@ -52,7 +52,7 @@ class StartshipsRestful(Resource):
 api.add_resource(StartshipsRestful, '/')
 
 if __name__ == '__main__':
-    t1 = threading.Thread(name="retriever", target=ret) 
+    t1 = threading.Thread(name="retriever", target=retriever) 
     t1.start()
     app.run(debug=True, port=8082)
 
