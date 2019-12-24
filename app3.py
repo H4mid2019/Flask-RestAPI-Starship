@@ -37,7 +37,7 @@ def retriever():
             else:
                 starships_unknown_hyperdrive.append(dict({'name':ii['name']}))
     starships_sorted = sorted(starships, key = lambda i: i['hyperdrive_rating'], reverse=False)
-    threading.Timer(500, retriever).start()
+    threading.Timer(15, retriever).start()
     return True 
 
 
