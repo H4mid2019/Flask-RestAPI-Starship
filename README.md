@@ -8,8 +8,8 @@
  </pre>
  <br/>
 <h1>Deploying Method2</h2>
-<p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). so I install flowing programs. nginx, pip, python3,6>= , flask, flask-restful, requests by following commands in terminal:
-*Note: I logged in as a root user.</p>
+<p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). so I install flowing programs. nginx, pip, python3,6>= , flask, flask-restful, requests by following commands in terminal:</p>
+<p>*Note: I logged in as a root user.</p>
 <pre>
 apt update && apt upgrade -y && apt install -y python3-dev build-essential python3-pip  nginx
 </pre>
