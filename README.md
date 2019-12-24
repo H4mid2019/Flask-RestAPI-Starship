@@ -33,7 +33,7 @@ gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi2:app
 </pre>
 where "w" stands for workers so we get higher speed(based on Gunicorn documentation for each core of processor 4 workers is fine)
 I wanna Gunicorn to be bind as a Unix socket so I think it's faster and at least one of the port of servers will be still empty.
-so I added a file which its name is "starships.service" to "/etc/systemd/system" and configured that like below for introduce our Gunicorn as service achieving a stable running Gunicorn service even after restarting the server. and I configured that to run after network configured
+so I added a file which its name is "starships.service" to "/etc/systemd/system" and configured that like below to introduce our Gunicorn as service achieving a stable running Gunicorn service even after restarting the server. and I configured that to run after network configured
 <pre>
 [Unit]
 Description=Starships Gunicorn daemon
