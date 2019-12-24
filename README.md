@@ -63,7 +63,7 @@ systemctl enable starships  # to be sure the service will be run in next restart
 
 systemctl daemon-reload  # totally reloads daemon 
 </pre>
-Then I add a new file to “/etc/nginx/sites-available/” with "startships" name which contains below configuration:
+<p>Then I add a new file to "/etc/nginx/sites-available/" named "starships" which contains configuration below:</p>
 <pre>
 upstream starships {
     server unix:/var/run/gunicorn.socket fail_timeout=0;
@@ -89,7 +89,7 @@ server {
 
 }
 </pre>
-Then I run the flow command to make a link of these file in the "/etc/nginx/site-enabled" folder 
+<p>Then I run the following command to link these file in "/etc/nginx/site-enabled" folder </p>
 <pre>
 ln -s /etc/nginx/sites-available/starships /etc/nginx/sites-enabled/starships
 </pre>
