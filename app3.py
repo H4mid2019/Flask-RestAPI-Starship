@@ -31,7 +31,6 @@ def retriever():
             break
 
     starships = []
-    starships_unknown_hyperdrive = []
     for i in l:
         for ii in i:
             if ii['hyperdrive_rating'] != 'unknown':

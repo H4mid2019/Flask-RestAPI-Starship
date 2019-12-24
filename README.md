@@ -27,11 +27,11 @@ pip3 install flask flask-restful Gunicorn
 <p>I'v made a folder under “/var/www/html” named “starships” and put the codes there.
 There are 2 methods of REST-API with flask. I coded in 3 different ways using them.You can find the first in "app" the second in "app2" and the third in "app3".</p>
 
-<p>The major difference between app3 and two others is that the app3 is much faster in answering the client. Because it keeps itself updated from API every 15 seconds, but the others receive data from the server at runtime after user requests and then will deliver to the client.</p>
+<p>The most difference between app3 and two others is that the app3 is much faster in answering the client. Because it keeps itself updated from API every 15 seconds, but the others don't. They receive data from the server at runtime just after the user request and then will deliver to the client.</p>
 
-I love the "app3" so I configure Nginx and Gunicorn (wsgi3) for app3 by the way the first app is perfectly fine.
+<p>I prefer the "app3" so I configure Nginx and Gunicorn (wsgi3) for app3 by the way the first app is perfectly fine.</p>
 
-So I wanna run Gunicorn like this :
+<p>So I wanna run Gunicorn like this :</p>
 <pre>
 gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi3:app
 </pre>
