@@ -1,5 +1,5 @@
 # Flask-RestAPI-Starship
-<h3>*Note: I made a simple bash script that simply setups this app and will run that just use this command:<h3>
+<h3>*Note: I made a simple bash script that simply setups this app and will run that just use this command:</h3>
     <p>*** It tested only in ubuntu 18.04 ***</p>
  <pre>
  chmod +x starships.sh
