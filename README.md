@@ -9,7 +9,7 @@
  sudo ./starships.sh
  </pre>
  <br/>
-<h1>Deployment Method2</h2>
+<h1>Deployment Method2</h1>
 <p>First of all, I started with installation prerequisites and Ubuntu 18.04 running on my server(Amazon EC2). So I installed the following programs. nginx, pip, python3,6>= , flask, flask-restful, requests by the following commands in the terminal:</p>
 <p>*Note: I logged in as a root user.</p>
 <pre>
