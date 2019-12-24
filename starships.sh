@@ -3,7 +3,7 @@ apt update && apt upgrade -y && apt install -y python3-dev iptables-persistent b
 pip3 install -U setuptools requests wheel
 pip3 install flask flask-restful Gunicorn 
 mkdir -p /var/www/html/starships
-cp app2.py wsgi2.py /var/www/html/starships/.
+cp app3.py wsgi3.py /var/www/html/starships/.
 cat > /etc/systemd/system/starships.service <<'_EOF'
 [Unit]
 Description=Starships Gunicorn daemon
@@ -14,7 +14,7 @@ User=root
 Group=root
 RuntimeDirectory=gunicorn
 WorkingDirectory=/var/www/html/starships/
-ExecStart=/usr/local/bin/gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi2:app
+ExecStart=/usr/local/bin/gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi3:app
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true

@@ -22,14 +22,16 @@ pip3 install -U setuptools requests wheel
 pip3 install flask flask-restful Gunicorn
 </pre>
 
-I make a folder under “/var/www/html” with “starships” name. and I put the codes there.
-so there are two methods to achieve REST-API. I coded in two ways. first exist in "app" and second is in "app2".
+<p>I make a folder under “/var/www/html” with “starships” name. and I put the codes there.
+so there are 3 methods of REST-API with flask. I coded in 3 different methods. first exist in "app" and second is in "app2" and third in "app3".</p>
 
-I love the "app2" so I configure Nginx and Gunicorn (wsgi2) for app2 by the way the first app is perfectly fine.
+<p>The major difference between app3 and the two other is the app3 is much faster in answering to the client because it keeps itself updated from API every 15 seconds but the other base on user request, receive data from the server at runtime and then will be delivered to the client.</p>
+
+I love the "app3" so I configure Nginx and Gunicorn (wsgi3) for app3 by the way the first app is perfectly fine.
 
 So I wanna run Gunicorn like this :
 <pre>
-gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi2:app
+gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi3:app
 </pre>
 where "w" stands for workers so we get higher speed(based on Gunicorn documentation for each core of processor 4 workers is fine)
 I wanna Gunicorn to be bind as a Unix socket so I think it's faster and at least one of the port of servers will be still empty.
