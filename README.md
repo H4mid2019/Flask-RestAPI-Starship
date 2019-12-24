@@ -29,9 +29,9 @@ There are 2 methods of REST-API with flask. I coded in 3 different ways using th
 
 <p>The most difference between app3 and two others is that the app3 is much faster in answering the client. Because it keeps itself updated from API every 15 seconds, but the others don't. They receive data from the server at runtime just after the user request and then will deliver to the client.</p>
 
-<p>I prefer the "app3" so I configure Nginx and Gunicorn (wsgi3) for app3 by the way the first app is perfectly fine.</p>
+<p>I prefer the "app3" so I do configure Nginx and Gunicorn (WSGI 3) for it. By the way, the other apps are perfectly fine too.</p>
 
-<p>So I wanna run Gunicorn like this :</p>
+<p>So I run Gunicorn like this :</p>
 <pre>
 gunicorn -w 4 --pid /var/run/gpid --bind unix:/var/run/gunicorn.socket wsgi3:app
 </pre>
