@@ -112,11 +112,11 @@ also, I should open port 80 in firewall
 <pre>
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 </pre>
-and also in security groups in AWS settings.
-then our starships servers work properly and nice. 
+<p>And also it should be open in security groups in AWS settings. So our starships servers work properly.</p>
 
-Test the Server :
-   For checking our server we can use normal browsers because normal requests are GET but it returns string we can use plugins like postman for Chrome or curl and jq in Ubuntu Terminal or  requests and json in Python two examples :
+<h3>Testing the Server </h3>
+<p>For testing our server, we can use browsers because normal requests are GET, but it returns a string.
+We can also use plugins, like postman for Chrome, curl and JQ for Ubuntu Terminal, requests and JSON for Python. </p>
 <pre>
 # command line example :
 # first we have to install jq 
@@ -144,8 +144,7 @@ curl -v 127.0.0.1
 < Content-Length: 3299
 < Connection: keep-alive
 </pre>
-The third line from the bottom shows that the output is JSON. 
-Then for getting beauty json:
+<p>The third line from the bottom shows that the output is JSON. To make the JSON more beautiful:</p>
 <pre>
 curl -s 127.0.0.1 |  jq ‘.’ 
 </pre>
